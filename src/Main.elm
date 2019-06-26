@@ -40,16 +40,11 @@ init =
 
 type Msg
     = Inc
-    | Dec
 
 
 view : Model -> Html Msg
 view model =
-    section [ name "counter" ]
-        [ text (String.fromInt model.count)
-        , button [ onClick Dec ] [ text "-" ]
-        , button [ onClick Inc ] [ text "+" ]
-        ]
+    section [ name "counter" ] [ text "0" ]
 
 
 
@@ -57,10 +52,5 @@ view model =
 
 
 update : Msg -> Model -> Model
-update msg model =
-    case msg of
-        Inc ->
-            { model | count = model.count + 1 }
-
-        Dec ->
-            { model | count = model.count - 1 }
+update _ model =
+    model
